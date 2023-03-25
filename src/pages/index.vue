@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'IndexPage',
+  title: 'IndexPage',
 })
 const user = useUserStore()
-const name = $ref(user.savedName)
+const title = $ref(user.savedName)
 
 const router = useRouter()
 const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+  if (title)
+    router.push(`/2023/03/${encodeURIComponent(title)}`)
 }
 
 const { t } = useI18n()
@@ -31,7 +31,7 @@ const { t } = useI18n()
     <div py-4 />
 
     <TheInput
-      v-model="name"
+      v-model="title"
       placeholder="What's your name?"
       autocomplete="false"
       @keydown.enter="go"
@@ -41,7 +41,7 @@ const { t } = useI18n()
     <div>
       <button
         btn m-3 text-sm
-        :disabled="!name"
+        :disabled="!title"
         @click="go"
       >
         {{ t('button.go') }}
