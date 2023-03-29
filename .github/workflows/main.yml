@@ -32,7 +32,6 @@ jobs:
         run: |
           cd $PUBLISH_DIR
           git init
-          git branch -m master main
           git config --local user.name $USER_NAME
           git config --local user.email $USER_EMAIL
           git status
