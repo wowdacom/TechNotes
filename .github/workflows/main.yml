@@ -16,9 +16,9 @@ jobs:
       matrix:
         node-version: [10.x]
     steps:
-      - uses: wowdacom
+      - uses: wowdacom/TechNotes
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: wowdacom
+        uses: wowdacom/TechNotes
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
