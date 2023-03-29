@@ -2,13 +2,13 @@ name: deploy gh-pages
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build:
     name: Build and deploy gh-pages
     env:
       MY_SECRET: ${{secrets.COMMIT_SECRET}}
-      USER_NAME: wowdacom
+      USER_NAME: Jim Hu
       USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
