@@ -8,7 +8,7 @@ jobs:
     name: Build and deploy gh-pages
     env:
       MY_SECRET: ${{secrets.COMMIT_SECRET}}
-      USER_NAME: Jim Hu
+      USER_NAME: g7834
       USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
