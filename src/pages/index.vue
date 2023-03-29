@@ -21,7 +21,7 @@ const { t } = useI18n()
     </div>
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        我的前端技術筆記 - 再次測試
+        我的前端技術筆記 - 權限問題?
       </a>
     </p>
     <p>
