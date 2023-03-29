@@ -22,12 +22,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: pnpm install
+      - name: npm run install
         run: |
-          pnpm install
-      - name: pnpm build
+          npm run install
+      - name: npm run build
         run: |
-          pnpm build
+          npm run build
       - name: Commit files
         run: |
           cd $PUBLISH_DIR
