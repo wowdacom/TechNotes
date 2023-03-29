@@ -8,17 +8,18 @@ jobs:
     name: Build and deploy gh-pages
     env:
       MY_SECRET: ${{secrets.COMMIT_SECRET}}
-      USER_NAME: githubaction
-      USER_EMAIL: githubaction@fake.com
+      USER_NAME: wowdacom
+      USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [10.x]
     steps:
-      - uses: wowdacom/TechNotes
+      - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: wowdacom/TechNotes
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
@@ -32,8 +33,8 @@ jobs:
         run: |
           cd $PUBLISH_DIR
           git init
-          git config --local user.name wowdacom
-          git config --local user.email wowdacom@gmail.com
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
           git status
           git remote add origin https://github.com/wowdacom/TechNotes.git
           git checkout -b gh-pages
